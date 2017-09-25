@@ -23,6 +23,19 @@ let openmrsApi = {
     headers,
     url: `${baseUrl}/concept`
   },
+  getLocalConceptParentName(uuid) {
+    return getLocalConcept = {
+      method: 'GET',
+      headers,
+      url: `${baseUrl}/${uuid}/name`,
+      json: true
+    };
+  },
+  postLocalConceptParentName: {
+    method: 'POST',
+    headers,
+    url: `${baseUrl}/${uuid}/name`
+  },
   getLocalSystemSettings: {
     method: 'GET',
     headers,
