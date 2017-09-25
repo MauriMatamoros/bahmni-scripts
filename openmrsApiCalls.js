@@ -3,6 +3,7 @@ const headers = { Authorization: `Basic `+Buffer.from('Superman:Admin123').toStr
 
 let openmrsApi = {
   baseUrl,
+  headers,
   getAllLocalConcepts: {
     method: 'GET',
     headers,
@@ -16,6 +17,11 @@ let openmrsApi = {
       url: `${baseUrl}/concept/${uuid}`,
       json: true
     };
+  },
+  postLocalConcept: {
+    method: 'POST',
+    headers,
+    url: `${baseUrl}/concept`
   },
   getLocalSystemSettings: {
     method: 'GET',
