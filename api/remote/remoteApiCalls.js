@@ -4,68 +4,68 @@ const headers = { Authorization: `Basic `+Buffer.from('Superman:Admin123').toStr
 let remote = {
   baseUrl,
   headers,
-  getAllRemoteConcepts: {
+  getAllConcepts: {
     method: 'GET',
     headers,
     url: `${baseUrl}/concept`,
     json: true
   },
-  getRemoteConcept(uuid) {
-    return getRemoteConcept = {
+  getConcept(uuid) {
+    return getConcept = {
       method: 'GET',
       headers,
       url: `${baseUrl}/concept/${uuid}`,
       json: true
     };
   },
-  postRemoteConcept(json) {
-    return postRemoteConcept = {
+  postConcept(json) {
+    return postConcept = {
       method: 'POST',
       headers,
       url: `${baseUrl}/concept`,
       json
     };
   },
-  getRemoteConceptParentName(uuid) {
-    return getRemoteConceptParentName = {
+  getConceptParentName(uuid) {
+    return getConceptParentName = {
       method: 'GET',
       headers,
       url: `${baseUrl}/${uuid}/name`,
       json: true
     };
   },
-  postRemoteConceptParentName(uuid,nameConcept) {
-    return postRemoteConceptParentName = {
+  postConceptParentName(uuid,nameConcept) {
+    return postConceptParentName = {
       method: 'POST',
       headers,
       url: `${baseUrl}/${uuid}/name`,
       json:nameConcept
     };
   },
-  getRemoteConceptParentAndChildName(parent, child) {
-    return getRemoteConceptParentAndChildName = {
+  getConceptParentAndChildName(parent, child) {
+    return getConceptParentAndChildName = {
       method: 'GET',
       headers,
       url: `${baseUrl}/concept/${parent}/name/${child}`,
       json: true
     };
   },
-  postRemoteConceptParentAndChildName(parent, child) {
-    return postRemoteConceptParentAndChildName = {
+  postConceptParentAndChildName(parent, child) {
+    return postConceptParentAndChildName = {
       method: 'POST',
       headers,
       url: `${baseUrl}/concept/${parent}/name/${child}`,
       json: true
     };
   },
-  getRemoteSystemSettings: {
+  getSystemSettings: {
     method: 'GET',
     headers,
     url: `${baseUrl}/systemsetting`,
     json: true
   },
-  getRemoteSystemSetting(uuid) {
-    return getRemoteConcept = {
+  getSystemSetting(uuid) {
+    return getConcept = {
       method: 'GET',
       headers,
       url: `${baseUrl}/systemsetting/${uuid}`,
