@@ -3,6 +3,7 @@ const rpn = require('request-promise-native');
 
 const { local } = require('./api/local/localApiCalls');
 const { remote } = require('./api/remote/remoteApiCalls');
+const { methods } = require('./methods/methods');
 
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
