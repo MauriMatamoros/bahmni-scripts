@@ -1,5 +1,5 @@
 
-let methods = {
+let handlers = {
   createBasicConcept(basicConcept, concept) {
     basicConcept.set = concept.set;
     basicConcept.display = concept.display;
@@ -21,5 +21,5 @@ let methods = {
 };
 
 module.exports = {
-  methods
+  handlers
 };

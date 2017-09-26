@@ -1,7 +1,7 @@
 const baseUrl = 'https://192.168.33.10/openmrs/ws/rest/v1';
 const headers = { Authorization: `Basic `+Buffer.from('Superman:Admin123').toString('base64') };
 
-let local = {
+let localOpenmrs = {
   baseUrl,
   headers,
   getAllConcepts: {
@@ -34,12 +34,12 @@ let local = {
       json: true
     };
   },
-  postConceptParentName(uuid,nameConcept) {
+  postConceptParentName(uuid,json) {
     return postConceptParentName = {
       method: 'POST',
       headers,
-      url: `${baseUrl}/${uuid}/name`,
-      json:nameConcept
+      url: `${baseUrl}/concept/${uuid}/name`,
+      json
     };
   },
   getConceptParentAndChildName(parent, child) {
@@ -75,5 +75,5 @@ let local = {
 };
 
 module.exports = {
-  local
+  localOpenmrs
 };

@@ -1,7 +1,7 @@
 const baseUrl = 'https://ec2-34-235-224-79.compute-1.amazonaws.com/openmrs/ws/rest/v1'
 const headers = { Authorization: `Basic `+Buffer.from('Superman:Admin123').toString('base64') };
 
-let remote = {
+let remoteOpenmrs = {
   baseUrl,
   headers,
   getAllConcepts: {
@@ -75,5 +75,5 @@ let remote = {
 };
 
 module.exports = {
-  remote
+  remoteOpenmrs
 };
