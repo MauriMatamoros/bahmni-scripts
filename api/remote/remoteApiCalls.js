@@ -1,78 +1,71 @@
-const baseUrl = 'https://192.168.33.10/openmrs/ws/rest/v1';
-const remoteUrl = 'https://ec2-34-235-224-79.compute-1.amazonaws.com/openmrs/ws/rest/v1'
+const baseUrl = 'https://ec2-34-235-224-79.compute-1.amazonaws.com/openmrs/ws/rest/v1'
 const headers = { Authorization: `Basic `+Buffer.from('Superman:Admin123').toString('base64') };
 
-let openmrsApi = {
+let remote = {
   baseUrl,
   headers,
-  getAllLocalConcepts: {
+  getAllRemoteConcepts: {
     method: 'GET',
     headers,
     url: `${baseUrl}/concept`,
     json: true
   },
-  getAllRemoteConcepts:{
-    method: 'GET',
-    headers,
-    url: `${remoteUrl}/concept`,
-    json: true
-  },
-  getLocalConcept(uuid) {
-    return getLocalConcept = {
+  getRemoteConcept(uuid) {
+    return getRemoteConcept = {
       method: 'GET',
       headers,
       url: `${baseUrl}/concept/${uuid}`,
       json: true
     };
   },
-  postLocalConcept(json) {
-    return postLocalConcept = { 
+  postRemoteConcept(json) {
+    return postRemoteConcept = {
       method: 'POST',
       headers,
       url: `${baseUrl}/concept`,
       json
-    }; 
+    };
   },
-  getLocalConceptParentName(uuid) {
-    return getLocalConceptParentName = {
+  getRemoteConceptParentName(uuid) {
+    return getRemoteConceptParentName = {
       method: 'GET',
       headers,
       url: `${baseUrl}/${uuid}/name`,
       json: true
     };
   },
-  postLocalConceptParentName(uuid,nameConcept) {
-    return postLocalConceptParentName = {
+  postRemoteConceptParentName(uuid,nameConcept) {
+    return postRemoteConceptParentName = {
       method: 'POST',
       headers,
       url: `${baseUrl}/${uuid}/name`,
       json:nameConcept
     };
   },
-  getLocalConceptParentAndChildName(parent, child) {
-    return getLocalConceptParentAndChildName = {
+  getRemoteConceptParentAndChildName(parent, child) {
+    return getRemoteConceptParentAndChildName = {
       method: 'GET',
       headers,
       url: `${baseUrl}/concept/${parent}/name/${child}`,
       json: true
     };
   },
-  postLocalConceptParentAndChildName(parent, child) {
-    return postLocalConceptParentAndChildName = {
+  postRemoteConceptParentAndChildName(parent, child) {
+    return postRemoteConceptParentAndChildName = {
       method: 'POST',
       headers,
       url: `${baseUrl}/concept/${parent}/name/${child}`,
       json: true
     };
   },
-  getLocalSystemSettings: {
+  getRemoteSystemSettings: {
     method: 'GET',
     headers,
     url: `${baseUrl}/systemsetting`,
     json: true
   },
-  getLocalSystemSetting(uuid) {
-    return getLocalConcept = {
+  getRemoteSystemSetting(uuid) {
+    return getRemoteConcept = {
       method: 'GET',
       headers,
       url: `${baseUrl}/systemsetting/${uuid}`,
@@ -89,7 +82,7 @@ let openmrsApi = {
       basicConcept.names = [{"conceptNameType":"FULLY_SPECIFIED","locale":"en","name":concept.names[0].display}];
       basicConcept.retired = concept.retired;
       basicConcept.setMembers = concept.setMembers;
-   
+
   },
    createNameConcept(nameConcept,concept){
       nameConcept.display = concept.name.display;
@@ -101,5 +94,5 @@ let openmrsApi = {
 };
 
 module.exports = {
-  openmrsApi
+  remote
 };
