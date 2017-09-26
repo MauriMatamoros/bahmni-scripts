@@ -1,6 +1,6 @@
 
 let methods = {
-  createBasicConcept(basicConcept,concept) {
+  createBasicConcept(basicConcept, concept) {
     basicConcept.set = concept.set;
     basicConcept.display = concept.display;
     basicConcept.answers = concept.answers;
@@ -11,7 +11,7 @@ let methods = {
     basicConcept.retired = concept.retired;
     basicConcept.setMembers = concept.setMembers;
   },
-  createNameConcept(nameConcept,concept) {
+  createNameConcept(nameConcept, concept) {
     nameConcept.display = concept.name.display;
     nameConcept.localePreferred = concept.name.localePreferred;
     nameConcept.locale = concept.name.locale;
