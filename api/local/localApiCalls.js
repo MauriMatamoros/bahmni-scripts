@@ -30,7 +30,7 @@ let localOpenmrs = {
     return getConceptParentName = {
       method: 'GET',
       headers,
-      url: `${baseUrl}/${uuid}/name`,
+      url: `${baseUrl}/concept/${uuid}/name`,
       json: true
     };
   },

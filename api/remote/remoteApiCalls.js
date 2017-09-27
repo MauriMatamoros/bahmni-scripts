@@ -30,15 +30,15 @@ let remoteOpenmrs = {
     return getConceptParentName = {
       method: 'GET',
       headers,
-      url: `${baseUrl}/${uuid}/name`,
+      url: `${baseUrl}/concept/${uuid}/name`,
       json: true
     };
   },
-  postConceptParentName(uuid,nameConcept) {
+  postConceptParentName(uuid, nameConcept) {
     return postConceptParentName = {
       method: 'POST',
       headers,
-      url: `${baseUrl}/${uuid}/name`,
+      url: `${baseUrl}/concept/${uuid}/name`,
       json:nameConcept
     };
   },
